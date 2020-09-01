@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.innosonvehicles.cruise.common.models.Service" />
+
+        <variable
+            name="mode"
+            type="com.innosonvehicles.cruise.rider.models.ItemMode" />
+
+        <import type="com.innosonvehicles.cruise.common.models.Service.QuantityMode" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="7dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="7dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/root_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/standard"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_title"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@{item.title}"
+                        />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get most affordable ride"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="end"
+                    >
+
+                    <!--androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/minus_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:onClick="onCallDriverClicked"
+                        android:tint="#9E9E9E"
+                        app:srcCompat="@drawable/remove"
+                        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /-->
+
+                    <TextView
+                        android:id="@+id/text_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:singleLine="true"
+                        android:text="250"
+                        android:textColor="@color/primaryDarkColor"
+                        android:textSize="16sp" />
+
+                    <!--androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:tint="#9E9E9E"
+                        app:srcCompat="@drawable/add"
+                        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /-->
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--android:id="@+id/root_view"-->
+    <!--android:layout_width="170dp"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--    android:id="@+id/image"-->
+    <!--    media="@{item.media}"-->
+    <!--    android:layout_width="100dp"-->
+    <!--    android:layout_height="100dp"-->
+    <!--    android:layout_marginTop="8dp"-->
+    <!--    android:src="@mipmap/ic_launcher"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<TextView-->
+    <!--    android:id="@+id/text_title"-->
+    <!--    style="@style/TextAppearance.AppCompat.Body2"-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_margin="3dp"-->
+    <!--    android:text="sdfasdf"-->
+    <!--    android:textSize="18sp"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintTop_toBottomOf="@id/image" />-->
+
+    <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintTop_toBottomOf="@id/text_title">-->
+
+    <!--    &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/minus_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--        android:clickable="true"-->
+    <!--        android:focusable="true"-->
+    <!--        android:onClick="onCallDriverClicked"-->
+    <!--        android:tint="#9E9E9E"-->
+    <!--        app:srcCompat="@drawable/remove"-->
+    <!--        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_cost"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ellipsize="marquee"-->
+    <!--        android:fadingEdge="horizontal"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:text="250"-->
+    <!--        android:textSize="25sp" />-->
+
+    <!--    &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:id="@+id/add_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--        android:clickable="true"-->
+    <!--        android:focusable="true"-->
+    <!--        android:tint="#9E9E9E"-->
+    <!--        app:srcCompat="@drawable/add"-->
+    <!--        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+    <!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:id="@+id/root_view"-->
+<!--    android:layout_width="170dp"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/image"-->
+<!--        media="@{item.media}"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@mipmap/ic_launcher"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_title"-->
+<!--        style="@style/TextAppearance.AppCompat.Body2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="3dp"-->
+<!--        android:text="sdfasdf"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/image" />-->
+
+<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_title">-->
+
+<!--        &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/minus_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:onClick="onCallDriverClicked"-->
+<!--            android:tint="#9E9E9E"-->
+<!--            app:srcCompat="@drawable/remove"-->
+<!--            android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_cost"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ellipsize="marquee"-->
+<!--            android:fadingEdge="horizontal"-->
+<!--            android:singleLine="true"-->
+<!--            android:text="250"-->
+<!--            android:textSize="25sp" />-->
+
+<!--        &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/add_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:tint="#9E9E9E"-->
+<!--            app:srcCompat="@drawable/add"-->
+<!--            android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+<!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+</layout>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:cardCornerRadius="7dp"-->
+    <!--        app:cardUseCompatPadding="true"-->
+    <!--        app:cardElevation="7dp"-->
+    <!--        >-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/root_view"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            >-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="100dp"-->
+    <!--                android:layout_height="75dp"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:src="@drawable/standard"-->
+    <!--                />-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/text_title"-->
+    <!--                    style="@style/TextAppearance.AppCompat.Body2"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="sdfasdf"-->
+    <!--                    android:textSize="18sp"-->
+
+    <!--                    />-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/TextAppearance.AppCompat.Body2"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Get most affordable ride"-->
+    <!--                    android:textSize="12sp"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    />-->
+
+    <!--            </LinearLayout>-->
+
+
+    <!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:layout_gravity="center_vertical"-->
+    <!--                android:gravity="end"-->
+    <!--                >-->
+
+    <!--                &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+    <!--                    android:id="@+id/minus_button"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    android:onClick="onCallDriverClicked"-->
+    <!--                    android:tint="#9E9E9E"-->
+    <!--                    app:srcCompat="@drawable/remove"-->
+    <!--                    android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/text_cost"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:ellipsize="marquee"-->
+    <!--                    android:fadingEdge="horizontal"-->
+    <!--                    android:singleLine="true"-->
+    <!--                    android:text="250"-->
+    <!--                    android:textSize="25sp" />-->
+
+    <!--                &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+    <!--                    android:id="@+id/add_button"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    android:tint="#9E9E9E"-->
+    <!--                    app:srcCompat="@drawable/add"-->
+    <!--                    android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+    <!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    <!--        </LinearLayout>-->
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--android:id="@+id/root_view"-->
+<!--android:layout_width="170dp"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--<ImageView-->
+<!--    android:id="@+id/image"-->
+<!--    media="@{item.media}"-->
+<!--    android:layout_width="100dp"-->
+<!--    android:layout_height="100dp"-->
+<!--    android:layout_marginTop="8dp"-->
+<!--    android:src="@mipmap/ic_launcher"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--<TextView-->
+<!--    android:id="@+id/text_title"-->
+<!--    style="@style/TextAppearance.AppCompat.Body2"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="3dp"-->
+<!--    android:text="sdfasdf"-->
+<!--    android:textSize="18sp"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/image" />-->
+
+<!--<androidx.appcompat.widget.LinearLayoutCompat-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/text_title">-->
+
+<!--    &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/minus_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:onClick="onCallDriverClicked"-->
+<!--        android:tint="#9E9E9E"-->
+<!--        app:srcCompat="@drawable/remove"-->
+<!--        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_cost"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ellipsize="marquee"-->
+<!--        android:fadingEdge="horizontal"-->
+<!--        android:singleLine="true"-->
+<!--        android:text="250"-->
+<!--        android:textSize="25sp" />-->
+
+<!--    &lt;!&ndash;androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/add_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:tint="#9E9E9E"-->
+<!--        app:srcCompat="@drawable/add"-->
+<!--        android:visibility="@{item.quantityMode == QuantityMode.Multiple ? View.VISIBLE : View.GONE" /&ndash;&gt;-->
+<!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
